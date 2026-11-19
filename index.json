@@ -1,0 +1,37 @@
+{
+  "name": "ShapeChange Shader (RadianN_kswg)",
+  "id": "net.numbertales-radiann.shapechange.listing",
+  "url": "https://radiann-kswg.github.io/VRCShader_ShapeChange/index.json",
+  "author": "RadianN_kswg",
+  "packages": {
+    "net.numbertales-radiann.shapechange": {
+      "versions": {
+        "1.0.0": {
+          "name": "net.numbertales-radiann.shapechange",
+          "displayName": "ShapeChange Shader",
+          "version": "1.0.0",
+          "unity": "2022.3",
+          "description": "アバターを箱・球・円柱・平面など 16 種類の形へ変形する、PC 版 VRChat 向けのシェーダーとセットアップツール。Built-in Render Pipeline 用。Standard の Opaque と lilToon の素材に対応。\n\nA shader and setup tool that deforms a humanoid avatar into 16 shapes (box, sphere, cylinder, flat and more) for VRChat on PC. Built-in Render Pipeline. Supports Standard Opaque and lilToon materials.",
+          "license": "MIT",
+          "author": {
+            "name": "ラジアン（柏木主税） / RadianN_kswg",
+            "url": "https://database.numbertales-radiann.net/"
+          },
+          "keywords": [
+            "vrchat",
+            "avatar",
+            "shader",
+            "liltoon",
+            "shape"
+          ],
+          "documentationUrl": "https://github.com/radiann-kswg/VRCShader_ShapeChange#readme",
+          "changelogUrl": "https://github.com/radiann-kswg/VRCShader_ShapeChange/blob/main/CHANGELOG.md",
+          "licensesUrl": "https://github.com/radiann-kswg/VRCShader_ShapeChange/blob/main/LICENSE.md",
+          "vpmDependencies": {},
+          "url": "https://github.com/radiann-kswg/VRCShader_ShapeChange/releases/download/1.0.0/net.numbertales-radiann.shapechange-1.0.0.zip",
+          "zipSHA256": "62dfeebcba337f2a212cc19991f072aecef5e1780ed893b8e572ea30634e76b4"
+        }
+      }
+    }
+  }
+}
