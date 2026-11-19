@@ -9,11 +9,11 @@ VRChat のアバターを、箱・球・円柱・平面など 16 種類の形へ
 VCC または ALCOM に次のリポジトリを追加し、プロジェクトに「ShapeChange Shader」を入れる。
 
 ```text
-https://radiann-kswg.github.io/VRCShader_ShapeChange-Public/index.json
+https://radiann-kswg.github.io/VRCShader_ShapeChange/index.json
 ```
 
-- [VCC / ALCOM に追加する](https://radiann-kswg.github.io/VRCShader_ShapeChange-Public/)（上の URL を登録するページ）
-- VPM CLI: `vpm add repo https://radiann-kswg.github.io/VRCShader_ShapeChange-Public/index.json`
+- [VCC / ALCOM に追加する](https://radiann-kswg.github.io/VRCShader_ShapeChange/)（上の URL を登録するページ）
+- VPM CLI: `vpm add repo https://radiann-kswg.github.io/VRCShader_ShapeChange/index.json`
 
 Standard の Opaque 素材だけなら、このパッケージだけで準備できる。lilToon 素材を使うアバターでは lilToon も入れる（確かめた版は 2.4.1）。lilToon を後から入れた場合は、このパッケージのフォルダーを右クリックして Reimport する。
 
@@ -115,7 +115,7 @@ Standard の Opaque 素材だけなら、このパッケージだけで準備で
 
 ## 開発用リポジトリからの更新
 
-シェーダーとツールは、非公開の開発用 Unity プロジェクトで調整している。このリポジトリには、開発側の配布リスト（`Tools > ShapeChange > Export Shader Only` の明示リスト）にあるファイルだけを、次のスクリプトで写す。アバターのモデル、モデルから作った生成物、開発用の記録は写さない。
+シェーダーとツールは、非公開の開発用リポジトリ `VRCShader_ShapeChange-Develop`（Unity プロジェクト）で調整している。このリポジトリには、開発側の配布リスト（`Tools > ShapeChange > Export Shader Only` の明示リスト）にあるファイルだけを、次のスクリプトで写す。アバターのモデル、モデルから作った生成物、開発用の記録は写さない。
 
 ```sh
 py .github/scripts/sync_from_dev.py <開発用リポジトリのルート>

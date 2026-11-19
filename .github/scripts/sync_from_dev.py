@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""開発用リポジトリ（Assets 配置の Unity プロジェクト）から、配布リストのファイルをこのパッケージへ写す。
+"""開発用リポジトリ（VRCShader_ShapeChange-Develop。Assets 配置の Unity プロジェクト）から、配布リストのファイルをこのパッケージへ写す。
 
     py .github/scripts/sync_from_dev.py <開発用リポジトリのルート>
 
