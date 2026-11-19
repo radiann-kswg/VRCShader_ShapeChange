@@ -1,0 +1,11 @@
+{
+    "name": "ShapeChange.Editor",
+    "includePlatforms": ["Editor"],
+    "versionDefines": [
+        {
+            "name": "com.vrchat.avatars",
+            "expression": "",
+            "define": "SHAPECHANGE_VRCSDK_AVATARS"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+Shader "ShapeChange/[Optional] lilToonTransparent"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultTransparent"
+        lilProperties "ShapeChangeProperties.lilblock"
+    }
+    lilSubShaderTags { "RenderType"="Transparent" "Queue"="Transparent" }
+    lilPassShaderName "Hidden/ShapeChange/PassTransparent"
+    lilSubShaderBRP "DefaultUsePass"
+    CustomEditor "ShapeChange.ShapeChangeInspector"
+}

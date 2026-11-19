@@ -1,0 +1,16 @@
+Shader "ShapeChange/[Optional] lilToonFurTwoPass"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultFurTransparent"
+        lilProperties "../ShapeChangeProperties.lilblock"
+    }
+    HLSLINCLUDE
+        #define LIL_RENDER 2
+    ENDHLSL
+    lilSubShaderTags { "RenderType"="TransparentCutout" "Queue"="Transparent" }
+    lilSubShaderInsert "../ShapeChangeInsert.lilblock"
+    lilSubShaderBRP "DefaultFurTwoPass"
+    CustomEditor "ShapeChange.ShapeChangeInspector"
+}

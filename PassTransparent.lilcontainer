@@ -1,0 +1,14 @@
+Shader "Hidden/ShapeChange/PassTransparent"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultTransparent"
+        lilProperties "ShapeChangeProperties.lilblock"
+    }
+    HLSLINCLUDE
+        #define LIL_RENDER 2
+    ENDHLSL
+    lilSubShaderInsert "ShapeChangeInsert.lilblock"
+    lilSubShaderBRP "Default"
+}

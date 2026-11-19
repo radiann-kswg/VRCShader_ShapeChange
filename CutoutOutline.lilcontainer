@@ -1,0 +1,13 @@
+Shader "ShapeChange/[Optional] lilToonCutoutOutline"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultCutout"
+        lilProperties "ShapeChangeProperties.lilblock"
+    }
+    lilSubShaderTags { "RenderType"="TransparentCutout" "Queue"="AlphaTest" }
+    lilPassShaderName "Hidden/ShapeChange/PassCutout"
+    lilSubShaderBRP "DefaultUsePassOutline"
+    CustomEditor "ShapeChange.ShapeChangeInspector"
+}

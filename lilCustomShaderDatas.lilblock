@@ -1,0 +1,5 @@
+ShaderName "ShapeChange"
+EditorName "ShapeChange.ShapeChangeInspector"
+
+// shortcut: lilToon 2.4.1 injects optimized buffers into a dead UV-pass include; remove when upstream fixes it.
+Replace "ShapeChange/[Optional]" "Includes/lil_pipeline_brp.hlsl" "UVReferencePipelineOmitted"

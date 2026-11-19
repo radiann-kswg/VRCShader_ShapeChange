@@ -1,0 +1,13 @@
+Shader "ShapeChange/[Optional] lilToonOpaque"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultOpaque"
+        lilProperties "ShapeChangeProperties.lilblock"
+    }
+    lilSubShaderTags { "RenderType"="Opaque" "Queue"="Geometry" }
+    lilPassShaderName "Hidden/ShapeChange/PassOpaque"
+    lilSubShaderBRP "DefaultUsePass"
+    CustomEditor "ShapeChange.ShapeChangeInspector"
+}

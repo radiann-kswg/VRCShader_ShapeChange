@@ -1,0 +1,3 @@
+ShaderName "ShapeChange"
+EditorName "ShapeChange.ShapeChangeInspector"
+Replace "Packages/jp.lilxyzw.liltoon/Shader/Includes/lil_pass_forward_fur.hlsl" "Packages/net.numbertales-radiann.shapechange/FurTwoPass/ShapeChangeFurPass.hlsl"

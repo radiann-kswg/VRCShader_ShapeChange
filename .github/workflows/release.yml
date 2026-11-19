@@ -1,0 +1,49 @@
+# package.json の version にまだリリースが無ければ、zip を作ってリリースする。
+# そのあと、全リリースから VPM のリスティングを作り直して gh-pages ブランチへ置く。
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [package.json]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Create the release if this version has none
+        run: |
+          name=$(jq -r .name package.json)
+          version=$(jq -r .version package.json)
+          if gh release view "$version" >/dev/null 2>&1; then
+            echo "リリース $version は作成済み"
+          else
+            # .github などは .gitattributes の export-ignore で zip から外れる
+            git archive --format=zip -o "$name-$version.zip" HEAD
+            gh release create "$version" "$name-$version.zip" --title "$version" --generate-notes --target "$GITHUB_SHA"
+          fi
+
+      - name: Build the VPM listing
+        run: python3 .github/scripts/build_listing.py _site
+
+      - name: Publish the listing to gh-pages
+        run: |
+          cd _site
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Listing for ${GITHUB_SHA::7}"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages

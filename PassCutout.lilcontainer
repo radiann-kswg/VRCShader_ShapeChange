@@ -1,0 +1,14 @@
+Shader "Hidden/ShapeChange/PassCutout"
+{
+    Properties
+    {
+        lilProperties "Default"
+        lilProperties "DefaultCutout"
+        lilProperties "ShapeChangeProperties.lilblock"
+    }
+    HLSLINCLUDE
+        #define LIL_RENDER 1
+    ENDHLSL
+    lilSubShaderInsert "ShapeChangeInsert.lilblock"
+    lilSubShaderBRP "Default"
+}
