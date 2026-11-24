@@ -6,14 +6,18 @@ VRChat のアバターを、箱・球・円柱・平面など 16 種類の形へ
 
 ## 導入
 
-VCC または ALCOM に次のリポジトリを追加し、プロジェクトに「ShapeChange Shader」を入れる。
+1. [リポジトリの案内ページ](https://radiann-kswg.github.io/VRCShader_ShapeChange/) で「VCC / ALCOM に追加する」を押し、起動したアプリで登録する。手動で登録する場合は、ALCOM の「パッケージ＆テンプレート → VPMリポジトリを追加」、または VCC の「Settings → Packages → Add Repository」に次の URL を貼り付ける。
 
-```text
-https://radiann-kswg.github.io/VRCShader_ShapeChange/index.json
-```
+   ```text
+   https://radiann-kswg.github.io/VRCShader_ShapeChange/index.json
+   ```
 
-- [VCC / ALCOM に追加する](https://radiann-kswg.github.io/VRCShader_ShapeChange/)（上の URL を登録するページ）
-- VPM CLI: `vpm add repo https://radiann-kswg.github.io/VRCShader_ShapeChange/index.json`
+2. Unity を閉じ、**導入先の Unity 2022.3 プロジェクト**を ALCOM の「管理」または VCC の「Manage Project」で開く。`ShapeChange Shader` を検索し、`＋` を押す。ALCOM では変更内容を確認して「適用」する。
+3. Unity を開き、インポート完了後に `Tools > ShapeChange > Setup Avatar` が表示されることを確認する。
+
+VPM CLI を使う場合は `vpm add repo https://radiann-kswg.github.io/VRCShader_ShapeChange/index.json` で登録し、`vpm add package net.numbertales-radiann.shapechange -p "<導入先のプロジェクト>"` で追加する。
+
+旧 `.unitypackage` と VPM 版を併用して Unity に `Assembly with name 'ShapeChange.Editor' already exists` が出る場合は、Unity を閉じて 1.0.1 以降へ更新する。既定の `Assets/ShapeChangeShader/Shaders` にある旧配布ファイル 29 件は VPM が取り除き、`Generated` 内のアバターや独自ファイルは保持する。旧配布ファイルに手を加えた場合は先にバックアップする。旧版を別の場所に移している場合は、エラーに表示された `Assets` 側の旧配布ファイルをプロジェクト外へ退避する。
 
 Standard の Opaque 素材だけなら、このパッケージだけで準備できる。lilToon 素材を使うアバターでは lilToon も入れる（確かめた版は 2.4.1）。lilToon を後から入れた場合は、このパッケージのフォルダーを右クリックして Reimport する。
 

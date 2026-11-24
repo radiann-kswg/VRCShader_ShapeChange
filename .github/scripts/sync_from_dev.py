@@ -63,8 +63,13 @@ def main(argv: list[str]) -> int:
     for rel in rels:
         if Path(rel).suffix not in SUFFIXES:
             raise SystemExit(f"[ERROR] 配布リストに想定外の種類のファイルがあります: {rel}")
-        # ファイルと .meta、途中のフォルダーの .meta（Unity の GUID を開発側と同じに保つ）
-        for item in [rel, rel + ".meta", *(str(parent) + ".meta" for parent in Path(rel).parents if str(parent) != ".")]:
+        # 素材の参照に使うファイル GUID は引き継ぐ。既存の配布フォルダーは専用 GUID を保つ。
+        items = [rel, rel + ".meta"]
+        for parent in Path(rel).parents:
+            folder_meta = f"{parent}.meta"
+            if parent != Path(".") and not (package / folder_meta).exists():
+                items.append(folder_meta)
+        for item in items:
             target = package / item
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes((source / item).read_bytes())
